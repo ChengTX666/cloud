@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service-route
+          uri: lb://service-user
+          predicates:
+            -Path=/api/users/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
